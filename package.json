@@ -1,0 +1,18 @@
+{
+  "name": "zh-hant-compare",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Yi-Liang Lai <yiliang.lai@gmail.com>",
+  "main": "zhHantCompare.js",
+  "license": "MIT",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liang610/zh-hant-compare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liang610/zh-hant-compare/issues"
+  },
+  "homepage": "https://github.com/liang610/zh-hant-compare#readme"
+}
