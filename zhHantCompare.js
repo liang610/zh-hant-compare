@@ -1,4 +1,4 @@
-const unicodeToStroke = require('./unicode_to_stroke.json');
+var unicodeToStroke = require('./unicode_to_stroke.json');
 
 function isNil(value) {
   return value == null
@@ -16,15 +16,15 @@ function zhHantCompare(s1, s2) {
   }
 
   if (typeof s1 === 'string' && typeof s2 === 'string') {
-    let n1 = 0, n2 = 0;
+    var n1 = 0, n2 = 0;
     while(true) {
-      const p1 = s1.codePointAt(n1);
-      const p2 = s2.codePointAt(n2);
+      var p1 = s1.codePointAt(n1);
+      var p2 = s2.codePointAt(n2);
 
-      const k1 = unicodeToStroke[p1.toString(16)];
-      const k2 = unicodeToStroke[p2.toString(16)];
+      var k1 = unicodeToStroke[p1.toString(16)];
+      var k2 = unicodeToStroke[p2.toString(16)];
 
-      let c;
+      var c;
       if (isNil(k1) || isNil(k2)) {
         c = String.fromCodePoint(p1).localeCompare(String.fromCodePoint(p2), ['en-US', 'zh-Hant-TW'], { sensitivity: 'base' });
       } else {
