@@ -1,6 +1,6 @@
 {
   "name": "zh-hant-compare",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "author": "Yi-Liang Lai <yiliang.lai@gmail.com>",
   "main": "zhHantCompare.js",
