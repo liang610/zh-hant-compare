@@ -26,7 +26,7 @@ function zhHantCompare(s1, s2) {
 
       var c;
       if (isNil(k1) || isNil(k2)) {
-        c = String.fromCodePoint(p1).localeCompare(String.fromCodePoint(p2), ['en-US', 'zh-Hant-TW'], { sensitivity: 'base' });
+        c = String.fromCodePoint(p1).localeCompare(String.fromCodePoint(p2), ['en-US', 'zh-Hant-TW'], { sensitivity: 'variant' });
       } else {
         c = k1 - k2;
       }
@@ -52,7 +52,7 @@ function zhHantCompare(s1, s2) {
       }
     }
 
-    return s1.localeCompare(s2, ['en-US', 'zh-Hant-TW'], { sensitivity: 'base' });
+    return s1.localeCompare(s2, ['en-US', 'zh-Hant-TW'], { sensitivity: 'variant' });
   }
 
   if (typeof s1 === 'number' && typeof s2 === 'string') {
