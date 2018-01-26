@@ -21,8 +21,8 @@ function zhHantCompare(s1, s2) {
       var p1 = s1.codePointAt(n1);
       var p2 = s2.codePointAt(n2);
 
-      var k1 = unicodeToStroke[p1.toString(16)];
-      var k2 = unicodeToStroke[p2.toString(16)];
+      var k1 = unicodeToStroke[p1.toString(32)];
+      var k2 = unicodeToStroke[p2.toString(32)];
 
       var c;
       if (isNil(k1) || isNil(k2)) {
