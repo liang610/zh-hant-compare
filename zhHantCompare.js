@@ -4,6 +4,10 @@ function isNil(value) {
   return value == null
 }
 
+function localeCompare(s1, s2) {
+  return s1.localeCompare(s2, ['en-US', 'zh-Hant-TW'], { sensitivity: 'variant' });
+}
+
 function zhHantCompare(s1, s2) {
   if (isNil(s1) || isNil(s2)) {
     if (isNil(s1) && isNil(s2)) {
@@ -25,10 +29,13 @@ function zhHantCompare(s1, s2) {
       var k2 = unicodeToStroke[p2.toString(32)];
 
       var c;
-      if (isNil(k1) || isNil(k2)) {
-        c = String.fromCodePoint(p1).localeCompare(String.fromCodePoint(p2), ['en-US', 'zh-Hant-TW'], { sensitivity: 'variant' });
-      } else {
+      if (!isNil(k1) && !isNil(k2)) {
         c = k1 - k2;
+        if (c === 0) {
+          c = localeCompare(String.fromCodePoint(p1), String.fromCodePoint(p2));
+        }
+      } else {
+        c = localeCompare(String.fromCodePoint(p1), String.fromCodePoint(p2));
       }
       if (c !== 0) {
         return c;
@@ -52,7 +59,7 @@ function zhHantCompare(s1, s2) {
       }
     }
 
-    return s1.localeCompare(s2, ['en-US', 'zh-Hant-TW'], { sensitivity: 'variant' });
+    return localeCompare(s1, s2);
   }
 
   if (typeof s1 === 'number' && typeof s2 === 'string') {
