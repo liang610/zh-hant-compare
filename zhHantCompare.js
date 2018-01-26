@@ -1,7 +1,7 @@
 var unicodeToStroke = require('./unicode_to_stroke.json');
 
 function isNil(value) {
-  return value == null
+  return value == null;
 }
 
 function localeCompare(s1, s2) {
@@ -9,14 +9,12 @@ function localeCompare(s1, s2) {
 }
 
 function zhHantCompare(s1, s2) {
-  if (isNil(s1) || isNil(s2)) {
-    if (isNil(s1) && isNil(s2)) {
-      return 0;
-    } else if (isNil(s1)) {
-      return -1;
-    }
-
+  if (isNil(s1) && isNil(s2)) {
+    return 0;
+  } else if (isNil(s1)) {
     return 1;
+  } else if (isNil(s2)) {
+    return -1;
   }
 
   if (typeof s1 === 'string' && typeof s2 === 'string') {
