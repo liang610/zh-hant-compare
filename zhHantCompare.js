@@ -1,7 +1,7 @@
 var unicodeToStroke = require('./unicode_to_stroke.json');
 
 function isNil(value) {
-  return value == null;
+  return value == null || (typeof value === 'string' && value.length === 0);
 }
 
 function localeCompare(s1, s2) {
