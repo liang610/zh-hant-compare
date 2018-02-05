@@ -1,4 +1,6 @@
-var unicodeToStroke = require('./unicode_to_stroke.json');
+import unicodeToStrokeData from './unicode_to_stroke.data';
+
+const unicodeToStroke = JSON.parse(unicodeToStrokeData);
 
 function isNil(value) {
   return value == null || (typeof value === 'string' && value.length === 0);
@@ -75,5 +77,4 @@ function zhHantCompare(s1, s2) {
   return s1 - s2;
 }
 
-module.exports = zhHantCompare;
-exports.default = zhHantCompare;
+export default zhHantCompare;
