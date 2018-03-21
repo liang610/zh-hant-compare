@@ -2,9 +2,9 @@ import string from 'rollup-plugin-string';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
-  input: 'src/zhHantCompare.js',
+  input: 'src/index.js',
   output: {
-    file: 'dist/zhHantCompare.js',
+    file: 'dist/index.min.js',
     format: 'cjs'
   },
   plugins: [

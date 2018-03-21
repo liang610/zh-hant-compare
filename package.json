@@ -3,7 +3,7 @@
   "version": "0.4.2",
   "description": "",
   "author": "Yi-Liang Lai <yiliang.lai@gmail.com>",
-  "main": "dist/zhHantCompare.js",
+  "main": "dist/index.min.js",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c"

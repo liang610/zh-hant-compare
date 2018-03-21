@@ -1,0 +1,1 @@
+export { default as zhHantCompare } from './zhHantCompare.js';
