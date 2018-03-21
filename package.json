@@ -1,5 +1,5 @@
 {
-  "name": "zh-hant-compare",
+  "name": "zh-hant-utils",
   "version": "0.4.2",
   "description": "",
   "author": "Yi-Liang Lai <yiliang.lai@gmail.com>",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liang610/zh-hant-compare.git"
+    "url": "git+https://github.com/liang610/zh-hant-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/liang610/zh-hant-compare/issues"
+    "url": "https://github.com/liang610/zh-hant-utils/issues"
   },
-  "homepage": "https://github.com/liang610/zh-hant-compare#readme",
+  "homepage": "https://github.com/liang610/zh-hant-utils#readme",
   "files": [
     "src",
     "dist"
