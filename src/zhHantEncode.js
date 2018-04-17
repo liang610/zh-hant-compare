@@ -10,6 +10,8 @@ function zhHantEncode(s) {
   const str = (typeof s === 'string') ? s : String(s);
   var code = '';
 
+  if (str.length === 0) return str;
+
   var n = 0;
   while(true) {
     var p = str.codePointAt(n);
