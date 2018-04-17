@@ -1,6 +1,6 @@
 {
   "name": "zh-hant-utils",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "",
   "author": "Yi-Liang Lai <yiliang.lai@gmail.com>",
   "main": "dist/index.min.js",
