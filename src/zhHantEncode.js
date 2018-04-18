@@ -1,6 +1,4 @@
-import unicodeToStrokeData from './unicode_to_stroke.data';
-
-const unicodeToStroke = JSON.parse(unicodeToStrokeData);
+import { UNICODE_TO_STROKE } from './data.js';
 
 const MAPPING = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
@@ -15,7 +13,7 @@ function zhHantEncode(s) {
   var n = 0;
   while(true) {
     var p = str.codePointAt(n);
-    var k = unicodeToStroke[p.toString(32)];
+    var k = UNICODE_TO_STROKE[p.toString(32)];
 
     var c = String.fromCodePoint(p);
 
