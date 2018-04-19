@@ -1,4 +1,4 @@
-export { default as zhHantCompare } from './zhHantCompare.js';
-export { default as zhHantEncode } from './zhHantEncode.js';
-export { default as zhHansCompare } from './zhHansCompare.js';
-export { default as zhHansEncode } from './zhHansEncode.js';
+export { default as strokeCompare } from './strokeCompare.js';
+export { default as strokeEncode } from './strokeEncode.js';
+export { default as pinyinCompare } from './pinyinCompare.js';
+export { default as pinyinEncode } from './pinyinEncode.js';

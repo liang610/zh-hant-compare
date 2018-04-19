@@ -1,8 +1,6 @@
-import { UNICODE_TO_STROKE } from './data.js';
+import { UNICODE_TO_PINYIN } from './data.js';
 
-const MAPPING = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-
-function zhHantEncode(s) {
+function pinyinEncode(s) {
   if (s == null) return s;
 
   const str = (typeof s === 'string') ? s : String(s);
@@ -13,14 +11,18 @@ function zhHantEncode(s) {
   var n = 0;
   while(true) {
     var p = str.codePointAt(n);
-    var k = UNICODE_TO_STROKE[p.toString(32)];
+    var k = UNICODE_TO_PINYIN[p.toString(32)];
 
     var c = String.fromCodePoint(p);
 
     if (k != null) {
-      code = code + MAPPING.charAt(k) + c;
+      if (k.length === 1) {
+        code = code + '0' + k + c;
+      } else {
+        code = code + k + c;
+      }
     } else {
-      code = code + '0' + c;
+      code = code + '00' + c;
     }
 
     if (p > 0xffff) {
@@ -33,4 +35,4 @@ function zhHantEncode(s) {
   return code;
 }
 
-export default zhHantEncode;
+export default pinyinEncode;

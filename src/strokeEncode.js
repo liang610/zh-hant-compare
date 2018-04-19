@@ -1,6 +1,8 @@
-import { UNICODE_TO_PINYIN } from './data.js';
+import { UNICODE_TO_STROKE } from './data.js';
 
-function zhHantEncode(s) {
+const MAPPING = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+function strokeEncode(s) {
   if (s == null) return s;
 
   const str = (typeof s === 'string') ? s : String(s);
@@ -11,18 +13,14 @@ function zhHantEncode(s) {
   var n = 0;
   while(true) {
     var p = str.codePointAt(n);
-    var k = UNICODE_TO_PINYIN[p.toString(32)];
+    var k = UNICODE_TO_STROKE[p.toString(32)];
 
     var c = String.fromCodePoint(p);
 
     if (k != null) {
-      if (k.length === 1) {
-        code = code + '0' + k + c;
-      } else {
-        code = code + k + c;
-      }
+      code = code + MAPPING.charAt(k) + c;
     } else {
-      code = code + '00' + c;
+      code = code + '0' + c;
     }
 
     if (p > 0xffff) {
@@ -35,4 +33,4 @@ function zhHantEncode(s) {
   return code;
 }
 
-export default zhHantEncode;
+export default strokeEncode;

@@ -8,7 +8,7 @@ function localeCompare(s1, s2) {
   return s1.localeCompare(s2, ['en-US', 'zh-Hant-TW'], { sensitivity: 'variant' });
 }
 
-function zhHantCompare(s1, s2) {
+function strokeCompare(s1, s2) {
   if (isNil(s1) && isNil(s2)) {
     return 0;
   } else if (isNil(s1)) {
@@ -75,4 +75,4 @@ function zhHantCompare(s1, s2) {
   return s1 - s2;
 }
 
-export default zhHantCompare;
+export default strokeCompare;

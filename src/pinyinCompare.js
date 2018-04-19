@@ -12,7 +12,7 @@ function localeCompare(s1, s2) {
   return s1.localeCompare(s2, ['en-US', 'zh-Hans-CN'], { sensitivity: 'variant' });
 }
 
-function zhHansCompare(s1, s2) {
+function pinyinCompare(s1, s2) {
   if (isNil(s1) && isNil(s2)) {
     return 0;
   } else if (isNil(s1)) {
@@ -79,4 +79,4 @@ function zhHansCompare(s1, s2) {
   return s1 - s2;
 }
 
-export default zhHansCompare;
+export default pinyinCompare;
