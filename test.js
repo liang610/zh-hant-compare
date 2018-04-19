@@ -1,6 +1,6 @@
 const { zhHantCompare, zhHantEncode, zhHansCompare, zhHansEncode } = require('./dist/index.min.js');
 
-const array = ['臺灣', '台南', '台北', '亞洲', '歐洲', '臺北', '美洲', 'a', null, undefined, '無敵'];
+const array = ['臺灣', '台南', '台中', '台北', '亞洲', '歐洲', '臺北', '美洲', 'a', null, undefined, '無敵'];
 
 const array1 = array.slice();
 array1.sort(zhHantCompare);
