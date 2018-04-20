@@ -1,7 +1,5 @@
 import { UNICODE_TO_STROKE } from './data.js';
 
-const MAPPING = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-
 function strokeEncode(s) {
   if (s == null) return s;
 
@@ -12,18 +10,17 @@ function strokeEncode(s) {
 
   var n = 0;
   while(true) {
-    var p = str.codePointAt(n);
-    var k = UNICODE_TO_STROKE[p.toString(32)];
-
-    var c = String.fromCodePoint(p);
+    var cp = str.codePointAt(n);
+    var ch = String.fromCodePoint(cp);
+    var k = UNICODE_TO_STROKE[ch];
 
     if (k != null) {
-      code = code + MAPPING.charAt(k) + c;
+      code = code + k;
     } else {
-      code = code + '0' + c;
+      code = code + ch;
     }
 
-    if (p > 0xffff) {
+    if (cp > 0xffff) {
       n += 2;
     } else {
       n += 1;

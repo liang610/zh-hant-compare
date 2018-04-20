@@ -20,30 +20,29 @@ function strokeCompare(s1, s2) {
   if (typeof s1 === 'string' && typeof s2 === 'string') {
     var n1 = 0, n2 = 0;
     while(true) {
-      var p1 = s1.codePointAt(n1);
-      var p2 = s2.codePointAt(n2);
+      var cp1 = s1.codePointAt(n1);
+      var cp2 = s2.codePointAt(n2);
+      var ch1 = String.fromCodePoint(cp1);
+      var ch2 = String.fromCodePoint(cp2);
 
-      var k1 = UNICODE_TO_STROKE[p1.toString(32)];
-      var k2 = UNICODE_TO_STROKE[p2.toString(32)];
+      var k1 = UNICODE_TO_STROKE[ch1];
+      var k2 = UNICODE_TO_STROKE[ch2];
 
       var c;
       if (!isNil(k1) && !isNil(k2)) {
-        c = k1 - k2;
-        if (c === 0) {
-          c = localeCompare(String.fromCodePoint(p1), String.fromCodePoint(p2));
-        }
+        c = k1 === k2 ? 0 : k1 > k2 ? 1 : -1;
       } else {
-        c = localeCompare(String.fromCodePoint(p1), String.fromCodePoint(p2));
+        c = localeCompare(ch1, ch2);
       }
       if (c !== 0) {
         return c;
       }
-      if (p1 > 0xffff) {
+      if (cp1 > 0xffff) {
         n1 += 2;
       } else {
         n1 += 1;
       }
-      if (p2 > 0xffff) {
+      if (cp2 > 0xffff) {
         n2 += 2;
       } else {
         n2 += 1;
