@@ -10,22 +10,17 @@ function pinyinEncode(s) {
 
   var n = 0;
   while(true) {
-    var p = str.codePointAt(n);
-    var k = UNICODE_TO_PINYIN[p.toString(32)];
-
-    var c = String.fromCodePoint(p);
+    var cp = str.codePointAt(n);
+    var ch = String.fromCodePoint(cp);
+    var k = UNICODE_TO_PINYIN[ch];
 
     if (k != null) {
-      if (k.length === 1) {
-        code = code + '0' + k + c;
-      } else {
-        code = code + k + c;
-      }
+      code = code + k;
     } else {
-      code = code + '00' + c;
+      code = code + ch;
     }
 
-    if (p > 0xffff) {
+    if (cp > 0xffff) {
       n += 2;
     } else {
       n += 1;
